@@ -4,8 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <meta name="theme-color" content="#BF4A1C">
+<meta name="description" content="Kişiselleştirilmiş Türk mutfağı haftalık yemek planlama uygulaması. 183 tarif, bölgesel lezzetler, sağlık filtreleri.">
 <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Sofra AI">
+<link rel="manifest" href="./manifest.json">
+<link rel="apple-touch-icon" href="./icon-192.png">
 <title>Sofra AI</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -20,6 +24,9 @@ input,button,select{font-family:inherit;}
 </head>
 <body>
 <div id="root"><div style="display:flex;align-items:center;justify-content:center;height:100vh;flex-direction:column"><h2 style="color:#BF4A1C">🍽️ Sofra AI</h2><p style="color:#78716C;font-size:13px">Yükleniyor...</p></div></div>
+<script>
+if('serviceWorker' in navigator){navigator.serviceWorker.register('./sw.js').catch(function(){});}
+</script>
 <script type="text/babel">
 const { useState, useEffect } = React;
 const REGIONS={guneydogu:{n:"Güneydoğu",e:"🌾",d:"Bulgur, çiğ köfte, isot",c:"#C65D07"},dogu:{n:"Doğu Anadolu",e:"🏔️",d:"Bulgur köfte, otlu peynir",c:"#8B6914"},akdeniz:{n:"Akdeniz",e:"🫒",d:"Zeytinyağlılar, sebze",c:"#2E7D32"},ege:{n:"Ege",e:"🌿",d:"Otlar, mücver",c:"#558B2F"},karadeniz:{n:"Karadeniz",e:"🐟",d:"Mısır unu, karalahana",c:"#1565C0"},ic_anadolu:{n:"İç Anadolu",e:"🍞",d:"Mantı, erişte",c:"#6D4C41"},marmara:{n:"Marmara",e:"🌊",d:"Karışık",c:"#37474F"}};
